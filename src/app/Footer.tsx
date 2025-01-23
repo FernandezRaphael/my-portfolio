@@ -16,10 +16,10 @@ export default function Footer() {
 
     return (
         <footer
-            className={`${styles.footer} ${isDarkMode ? styles.dark : styles.light
-                }`}
+            className={`${styles.footer} ${isDarkMode ? styles.dark : styles.light}`}
         >
-            <button className={styles.toggleButton} onClick={toggleTheme} >
+            <p className={styles.leftText}>© Raphaël Fernandez</p>
+            <button className={styles.toggleButton} onClick={toggleTheme}>
                 <img
                     src={isDarkMode ? "/light_mode.svg" : "/dark_mode.svg"}
                     alt={isDarkMode ? "Light mode" : "Dark mode"}

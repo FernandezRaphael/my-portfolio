@@ -1,0 +1,29 @@
+.about {
+    display: flex;
+    /* Utilise Flexbox pour le centrage */
+    justify-content: center;
+    /* Centre horizontalement */
+    align-items: center;
+    /* Centre verticalement */
+    text-align: center;
+    /* Centre le texte à l'intérieur */
+    position: relative;
+    top: 125PX;
+}
+
+.h2 {
+    max-width: 300px;
+    /* Limite la largeur maximale du texte */
+    margin: 0;
+    /* Supprime les marges par défaut */
+}
+
+@media (max-width: 600px) {
+    .about {
+        top: 0;
+    }
+
+    .h2 {
+        max-width: 200px;
+    }
+}

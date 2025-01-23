@@ -5,7 +5,7 @@ import styles from "./Hero.module.css";
 export default function Hero() {
     return (
         <div className={styles.hero}>
-            <h1>Fernandez Raphaël</h1>
+            <h1 className={styles.h1}>Fernandez Raphaël</h1>
             <div className={styles.menuWrapper}>
                 <span className={styles.menuTrigger}>Menu</span>
                 <div className={styles.dropdownMenu}>

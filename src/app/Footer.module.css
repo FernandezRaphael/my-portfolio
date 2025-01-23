@@ -1,26 +1,30 @@
-/* Footer.module.css */
 .footer {
     display: flex;
     justify-content: center;
+    /* Le bouton reste au centre */
     align-items: center;
+    position: fixed;
+    bottom: 0;
+    /* Fixe le footer au bas de la fenêtre */
+    left: 0;
+    width: 100%;
+    /* Occupe toute la largeur */
     padding: 16px;
     transition: background-color 0.3s, color 0.3s;
     font-size: 14px;
+    z-index: 100;
 }
 
-/* Mode sombre */
-.dark {
-    background-color: #131120;
-    color: #202187;
+.leftText {
+    position: absolute;
+    /* Positionne le texte indépendamment des autres éléments */
+    left: 100px;
+    /* Le place près du bord gauche */
+    margin: 0;
+    /* Supprime les marges par défaut */
+    font-size: 14px;
 }
 
-/* Mode clair */
-.light {
-    background-color: #EDD0D2;
-    color: #A67FAB;
-}
-
-/* Style du bouton */
 .toggleButton {
     padding: 8px 16px;
     border: none;
@@ -29,6 +33,23 @@
     background-color: #000000;
 }
 
+.dark {
+    background-color: #131120;
+    color: #202187;
+}
+
+.light {
+    background-color: #EDD0D2;
+    color: #A67FAB;
+}
+
 .img {
     display: block;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        position: absolute;
+    }
+
 }
