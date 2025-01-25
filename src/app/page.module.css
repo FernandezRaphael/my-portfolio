@@ -18,12 +18,11 @@
   /* Ajoute des coins arrondis */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .centered_box {
-    top: 25px;
-    bottom: 25px;
-    left: 25px;
-    right: 25px;
+    top: 20px;
+    left: 20px;
+    right: 20px;
     border-radius: 12px;
     /* Réduit l'arrondi sur mobile */
   }

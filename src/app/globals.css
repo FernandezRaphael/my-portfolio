@@ -12,6 +12,15 @@
   --cbackground: rgba(241, 234, 228, 0.4);
 }
 
+/* Importation de la police Alpha */
+@font-face {
+  font-family: 'Alpha';
+  src: url('../assets/fonts/AlphaLyrae-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Configuration de base */
 html,
 body {
   max-width: 100vw;
@@ -29,11 +38,12 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s, color 0.3s;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Alpha', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Styles universels */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -42,6 +52,7 @@ body {
   /* border: 1px solid red; */
 }
 
+/* Lien avec héritage de couleur */
 a {
   color: inherit;
   text-decoration: none;

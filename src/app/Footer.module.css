@@ -1,27 +1,22 @@
 .footer {
     display: flex;
     justify-content: center;
-    /* Le bouton reste au centre */
+    /* Sur PC, tout reste centré */
     align-items: center;
     position: fixed;
     bottom: 0;
-    /* Fixe le footer au bas de la fenêtre */
     left: 0;
     width: 100%;
-    /* Occupe toute la largeur */
     padding: 16px;
     transition: background-color 0.3s, color 0.3s;
-    font-size: 14px;
-    z-index: 100;
 }
 
 .leftText {
     position: absolute;
-    /* Positionne le texte indépendamment des autres éléments */
-    left: 100px;
+    /* Le texte reste indépendant des autres éléments */
+    left: 50px;
     /* Le place près du bord gauche */
     margin: 0;
-    /* Supprime les marges par défaut */
     font-size: 14px;
 }
 
@@ -29,27 +24,45 @@
     padding: 8px 16px;
     border: none;
     border-radius: 4px;
-    font-size: 14px;
-    background-color: #000000;
+    background-color: var(--cbackground);
 }
 
 .dark {
-    background-color: #131120;
-    color: #202187;
+    background-color: var(--background);
+    color: var(--foreground);
 }
 
 .light {
-    background-color: #EDD0D2;
-    color: #A67FAB;
+    background-color: var(--background);
+    color: var(--foreground);
 }
 
 .img {
     display: block;
 }
 
-@media (max-width: 600px) {
+/* Styles pour Mobile */
+@media (max-width: 1000px) {
     .footer {
         position: absolute;
+        justify-content: space-between;
+        /* Place le texte à gauche et le bouton à droite */
+        flex-direction: row;
+        /* Garde tout sur une ligne */
+        padding: 10px 16px;
+        /* Réduit le padding pour mobile */
     }
 
+    .leftText {
+        position: static;
+        /* Supprime la position absolue */
+        margin: 0;
+        font-size: 12px;
+        /* Réduit la taille de la police pour mobile */
+    }
+
+    .toggleButton {
+        font-size: 12px;
+        /* Ajuste la taille du bouton pour mobile */
+    }
 }

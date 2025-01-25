@@ -68,7 +68,7 @@
     transform: scale(1.1);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
     .menuWrapper {
         display: flex;
         justify-content: center;
