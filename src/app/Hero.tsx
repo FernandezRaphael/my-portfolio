@@ -12,7 +12,7 @@ export default function Hero() {
                 <div className={styles.dropdownMenu}>
                     <ul>
                         <li><Link href="/projets">Projets</Link></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
