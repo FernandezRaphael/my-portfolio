@@ -57,3 +57,33 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.container {
+  position: relative;
+  /* Nécessaire pour utiliser les positions absolues */
+  width: 100%;
+  height: 100%;
+}
+
+.centered_box {
+  position: absolute;
+  /* Permet de contrôler précisément les marges */
+  top: 50px;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+  background-color: var(--cbackground);
+  /* Couleur du bloc */
+  border-radius: 16px;
+  /* Ajoute des coins arrondis */
+}
+
+@media (max-width: 1000px) {
+  .centered_box {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    border-radius: 12px;
+    /* Réduit l'arrondi sur mobile */
+  }
+}
