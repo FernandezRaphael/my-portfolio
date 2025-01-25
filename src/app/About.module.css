@@ -90,7 +90,7 @@
     }
 
     .container>div {
-        top: 30px;
+        top: 40px;
         flex: 0 1 calc(15%);
         /* Sur mobile, occupe 15% de la largeur */
 
