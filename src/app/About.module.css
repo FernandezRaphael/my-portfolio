@@ -30,21 +30,21 @@
         background: url("../assets/img/portfolio3D.png") no-repeat 50% / cover;
     }
 
-    &:nth-of-type(2) {
-        background: url("../assets/img/test.jpg") no-repeat 50% / cover;
+    /* &:nth-of-type(2) {
+        background: url("") no-repeat 50% / cover;
     }
 
     &:nth-of-type(3) {
-        background: url("../assets/img/test.jpg") no-repeat 50% / cover;
+        background: url("") no-repeat 50% / cover;
     }
 
     &:nth-of-type(4) {
-        background: url("../assets/img/test.jpg") no-repeat 50% / cover;
+        background: url("") no-repeat 50% / cover;
     }
 
     &:nth-of-type(5) {
-        background: url("../assets/img/test.jpg") no-repeat 50% / cover;
-    }
+        background: url("") no-repeat 50% / cover;
+    } */
 
     .content {
         font-size: 1.5rem;

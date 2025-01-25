@@ -14,26 +14,26 @@ export default function About() {
                 </div>
                 <div>
                     <div className={styles.content}>
-                        <h2>test</h2>
-                        <span>test</span>
+                        <h2>Soon</h2>
+                        <span>2025</span>
                     </div>
                 </div>
                 <div>
                     <div className={styles.content}>
-                        <h2>test</h2>
-                        <span>test</span>
+                        <h2>Soon</h2>
+                        <span>2025</span>
                     </div>
                 </div>
                 <div>
                     <div className={styles.content}>
-                        <h2>test</h2>
-                        <span>test</span>
+                        <h2>Soon</h2>
+                        <span>2025</span>
                     </div>
                 </div>
                 <div>
                     <div className={styles.content}>
-                        <h2>test</h2>
-                        <span>test</span>
+                        <h2>Soon</h2>
+                        <span>2025</span>
                     </div>
                 </div>
             </div>
