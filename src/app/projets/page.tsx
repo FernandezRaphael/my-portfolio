@@ -38,7 +38,7 @@ export default function Projets() {
     }, []);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/projects?page=${currentPage}&limit=${projectsLimit}`)
+        fetch(`https://portfolio-backend-production-0ee9.up.railway.app/projects?page=${currentPage}&limit=${projectsLimit}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Erreur lors de la récupération des projets.");
