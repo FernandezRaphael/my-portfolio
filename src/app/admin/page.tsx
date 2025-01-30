@@ -17,7 +17,7 @@ export default function Admin() {
 
     // Récupération des projets
     useEffect(() => {
-        fetch("https://portfolio-backend.up.railway.app/projects")
+        fetch("https://portfolio-backend-production-0ee9.up.railway.app/projects")
             .then((res) => {
                 if (!res.ok) {
                     throw new Error("Erreur lors de la récupération des projets");
@@ -34,7 +34,7 @@ export default function Admin() {
         if (!confirm("Supprimer ce projet ?")) return;
 
         try {
-            const res = await fetch(`https://portfolio-backend.up.railway.app/projects/${id}`, {
+            const res = await fetch(`https://portfolio-backend-production-0ee9.up.railway.app/projects/${id}`, {
                 method: "DELETE",
             });
             if (res.ok) {
@@ -76,7 +76,7 @@ export default function Admin() {
         formData.append("image", form.image);
 
         try {
-            const res = await fetch("https://portfolio-backend.up.railway.app/projects", {
+            const res = await fetch("https://portfolio-backend-production-0ee9.up.railway.app/projects", {
                 method: "POST",
                 body: formData,
             });
