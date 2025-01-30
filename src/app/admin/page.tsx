@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image"; // Importation de Image de Next.js
 
 interface Project {
     id: number;
@@ -133,7 +134,13 @@ export default function Admin() {
                     <li key={project.id}>
                         <h2>{project.name}</h2>
                         <p>Année : {project.year}</p>
-                        <img src={project.image} alt={project.name} style={{ width: "100px" }} />
+                        {/* Remplacement de <img> par <Image /> */}
+                        <Image
+                            src={project.image} // L'URL de l'image
+                            alt={project.name} // Texte alternatif pour l'image
+                            width={100} // Largeur de l'image
+                            height={100} // Hauteur de l'image
+                        />
                         <p>
                             <a href={project.link} target="_blank" rel="noopener noreferrer">
                                 Voir le projet

@@ -1,6 +1,7 @@
 "use client"; // Ajoute ce flag pour permettre l'utilisation des hooks React.
 
 import { useState } from "react";
+import Image from "next/image"; // Importation du composant Image de Next.js
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -20,11 +21,11 @@ export default function Footer() {
         >
             <p className={styles.leftText}>© Raphaël Fernandez 2025</p>
             <button className={styles.toggleButton} onClick={toggleTheme}>
-                <img
-                    src={isDarkMode ? "/light_mode.svg" : "/dark_mode.svg"}
-                    alt={isDarkMode ? "Light mode" : "Dark mode"}
-                    width={24}
-                    height={24}
+                <Image
+                    src={isDarkMode ? "/light_mode.svg" : "/dark_mode.svg"} // Source des icônes
+                    alt={isDarkMode ? "Light mode" : "Dark mode"} // Texte alternatif pour l'accessibilité
+                    width={24} // Largeur de l'image
+                    height={24} // Hauteur de l'image
                 />
             </button>
         </footer>

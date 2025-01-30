@@ -37,10 +37,6 @@
     color: var(--foreground);
 }
 
-.img {
-    display: block;
-}
-
 /* Styles pour Mobile */
 @media (max-width: 1000px) {
     .footer {
