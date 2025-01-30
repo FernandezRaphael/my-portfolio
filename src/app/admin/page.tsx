@@ -14,6 +14,7 @@ interface Project {
 export default function Admin() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null); // Gérer les erreurs
 
     // Récupération des projets
     useEffect(() => {
@@ -24,8 +25,11 @@ export default function Admin() {
                 }
                 return res.json();
             })
-            .then((data) => setProjects(data.projects || data)) // Assurez-vous que votre réponse contient un tableau de projets
-            .catch((error) => console.error(error)) // Utilisez un console.log ou une gestion d'erreur appropriée
+            .then((data) => setProjects(data.projects || data))
+            .catch((error) => {
+                setError(error.message); // Enregistrez l'erreur dans l'état
+                console.error(error);
+            })
             .finally(() => setLoading(false));
     }, []);
 
@@ -43,7 +47,8 @@ export default function Admin() {
                 throw new Error("Erreur lors de la suppression du projet");
             }
         } catch (error) {
-            alert("Erreur lors de la suppression");
+            setError("Erreur lors de la suppression du projet");
+            console.error(error);
         }
     };
 
@@ -88,12 +93,16 @@ export default function Admin() {
                 throw new Error("Erreur lors de l'ajout du projet");
             }
         } catch (error) {
-            alert("Erreur lors de l'ajout du projet");
+            setError("Erreur lors de l'ajout du projet");
+            console.error(error);
         }
     };
 
     return (
         <div className="container">
+            {/* Affichage des erreurs si elles existent */}
+            {error && <p style={{ color: "red" }}>{error}</p>}
+
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -133,10 +142,10 @@ export default function Admin() {
                         <h2>{project.name}</h2>
                         <p>Année : {project.year}</p>
                         <Image
-                            src={`https://portfolio-backend-production-0ee9.up.railway.app/${project.image}`} // Ajout du domaine si nécessaire
-                            alt={project.name}
-                            width={100}
-                            height={100}
+                            src={project.image} // L'URL de l'image
+                            alt={project.name} // Texte alternatif pour l'image
+                            width={100} // Largeur de l'image
+                            height={100} // Hauteur de l'image
                         />
                         <p>
                             <a href={project.link} target="_blank" rel="noopener noreferrer">
