@@ -24,7 +24,7 @@ export default function Projets() {
     const [touchStart, setTouchStart] = useState<number | null>(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/projects`)
+        fetch(`https://portfolio-backend-production-0ee9.up.railway.app/projects`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Erreur lors de la récupération des projets.");
