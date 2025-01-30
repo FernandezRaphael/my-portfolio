@@ -1,5 +1,3 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import Image from "next/image"; // Importation de Image de Next.js
 
@@ -14,7 +12,6 @@ interface Project {
 export default function Admin() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string | null>(null);
 
     // Récupération des projets
     useEffect(() => {
@@ -26,7 +23,7 @@ export default function Admin() {
                 return res.json();
             })
             .then((data) => setProjects(data.projects || data)) // Assurez-vous que votre réponse contient un tableau de projets
-            .catch((error) => setError(error.message))
+            .catch((error) => console.error(error)) // Utilisez un console.log ou une gestion d'erreur appropriée
             .finally(() => setLoading(false));
     }, []);
 
@@ -56,17 +53,17 @@ export default function Admin() {
     }>({ name: "", year: "", link: "", image: null });
 
     // Gestion des changements dans le formulaire
-    const handleChange = (e: any) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
     // Gestion des changements d'image
-    const handleFileChange = (e: any) => {
-        setForm({ ...form, image: e.target.files[0] });
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, image: e.target.files ? e.target.files[0] : null });
     };
 
     // Soumission du formulaire
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (!form.image) return;  // Vérification que l'image existe
 
@@ -127,14 +124,12 @@ export default function Admin() {
             <h1>Administration</h1>
 
             {loading && <p>Chargement...</p>}
-            {error && <p style={{ color: "red" }}>{error}</p>}
 
             <ul>
                 {projects.map((project) => (
                     <li key={project.id}>
                         <h2>{project.name}</h2>
                         <p>Année : {project.year}</p>
-                        {/* Remplacement de <img> par <Image /> */}
                         <Image
                             src={project.image} // L'URL de l'image
                             alt={project.name} // Texte alternatif pour l'image
