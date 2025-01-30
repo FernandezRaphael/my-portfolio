@@ -87,22 +87,33 @@
 
 @media (max-width: 1000px) {
     .container {
-        gap: 10px;
-        /* Réduit l'espace entre les div sur mobile */
+        gap: 20px;
+        /* height: 500px; */
+        flex-wrap: wrap;
+        justify-content: space-around;
     }
 
     .containerDiv {
-        flex: 0 1 calc(15%);
-        /* Ajuste la largeur des div sur mobile */
+        flex: 0 1 calc(45% - 10px);
+        /* Ajuste la largeur pour 2 éléments par ligne */
+        min-width: 150px;
+        max-width: 200px;
     }
 
     .containerDiv:hover {
-        flex: 0 0 150px;
-        /* Agrandit légèrement au survol sur mobile */
+        flex: 0 1 calc(45% - 10px);
+        transform: translateY(-15px);
     }
 
     .content {
-        font-size: 1rem;
-        /* Réduit la taille du texte sur mobile */
+        font-size: 0.9rem;
+        /* Réduit davantage la taille du texte */
+        padding: 10px;
+        /* Réduit le padding */
+    }
+
+    .content span {
+        font-size: 0.8rem;
+        /* Réduit la taille du texte secondaire */
     }
 }

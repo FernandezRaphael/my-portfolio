@@ -35,3 +35,48 @@
     font-size: 1rem;
     color: var(--foreground);
 }
+
+/* Nouveaux styles spécifiques pour les projets */
+.projectContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    gap: 20px;
+}
+
+.projectCard {
+    flex: 0 0 200px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
+    box-shadow: 1px 5px 15px var(--background);
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.projectCard:hover {
+    flex: 0 0 400px;
+    box-shadow: 1px 3px 15px var(--foreground);
+    transform: translateY(-30px);
+}
+
+@media (max-width: 1000px) {
+    .projectContainer {
+        height: 650px;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .projectCard {
+        width: 200px;
+        height: 290px;
+    }
+
+    .projectCard:hover {
+        transform: translateY(-15px);
+    }
+}

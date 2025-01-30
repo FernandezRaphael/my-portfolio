@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 interface Project {
     id: number;
     name: string;
-    year: string;
+    year: number;
     image: string;
     link: string;
 }
@@ -21,9 +21,24 @@ export default function Projets() {
     const [error, setError] = useState<string | null>(null);
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
+    const [projectsLimit, setProjectsLimit] = useState(5);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/projects?page=${currentPage}&limit=5`)
+        const updateLimit = () => {
+            setProjectsLimit(window.innerWidth <= 1000 ? 2 : 5);
+        };
+
+        // Définir la limite initiale
+        updateLimit();
+
+        // Ajouter un écouteur pour le redimensionnement
+        window.addEventListener('resize', updateLimit);
+
+        return () => window.removeEventListener('resize', updateLimit);
+    }, []);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/projects?page=${currentPage}&limit=${projectsLimit}`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Erreur lors de la récupération des projets.");
@@ -39,7 +54,7 @@ export default function Projets() {
                 setError("Impossible de récupérer les projets pour le moment.");
             })
             .finally(() => setLoading(false));
-    }, [currentPage]);
+    }, [currentPage, projectsLimit]);
 
     if (loading) {
         return (
@@ -66,10 +81,10 @@ export default function Projets() {
             <div className={styles.centered_box}>
                 <Hero />
                 <div className={stylesAbout.about}>
-                    <div className={stylesAbout.container}>
+                    <div className={stylesProjects.projectContainer}>
                         {projects.map((project) => (
                             <div
-                                className={stylesAbout.containerDiv}
+                                className={`${stylesProjects.projectCard} ${stylesAbout.containerDiv}`}
                                 key={project.id}
                                 style={{
                                     backgroundImage: `url(${project.image})`,
