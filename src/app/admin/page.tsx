@@ -1,3 +1,5 @@
+"use client"; // Cette directive marque le fichier comme côté client
+
 import { useEffect, useState } from "react";
 import Image from "next/image"; // Importation de Image de Next.js
 
