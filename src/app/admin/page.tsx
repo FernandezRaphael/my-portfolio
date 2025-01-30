@@ -133,10 +133,10 @@ export default function Admin() {
                         <h2>{project.name}</h2>
                         <p>Année : {project.year}</p>
                         <Image
-                            src={project.image} // L'URL de l'image
-                            alt={project.name} // Texte alternatif pour l'image
-                            width={100} // Largeur de l'image
-                            height={100} // Hauteur de l'image
+                            src={`https://portfolio-backend-production-0ee9.up.railway.app/${project.image}`} // Ajout du domaine si nécessaire
+                            alt={project.name}
+                            width={100}
+                            height={100}
                         />
                         <p>
                             <a href={project.link} target="_blank" rel="noopener noreferrer">

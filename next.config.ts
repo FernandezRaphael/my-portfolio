@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ['portfolio-backend-production-0ee9.up.railway.app'],
+  }
 };
 
 export default nextConfig;
